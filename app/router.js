@@ -7,6 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('food', function() {
+    this.route('list');
+    this.route('detail', { path: '/detail/:foodId' });
+    this.route('new');
+  });
 });
 
 export default Router;

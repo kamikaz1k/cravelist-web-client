@@ -1,0 +1,10 @@
+<ul>
+  <li>
+    {{#link-to "food.new"}}Add New{{/link-to}}
+  </li>
+  {{#each model as |foodItem|}}
+    <li>
+      {{#link-to "food.detail" foodItem}}{{foodItem}}{{/link-to}}
+    </li>
+  {{/each}}
+</ul>
