@@ -10,3 +10,4 @@ Id: {{model.id}} | Name: {{model.name}} | Location: {{model.location}}
     </div>
 </div>
 {{#link-to "food.list"}}Back to list{{/link-to}}
+<button {{action "saveEntry"}}>Save "{{model.name}}"</button>

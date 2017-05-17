@@ -2,9 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
     model(params) {
-        return {
-            id: params.foodId,
-            name: "Curry Sauces"
-        };
+        return this.get('store').find('food-item', params.foodId);
     }
 });
