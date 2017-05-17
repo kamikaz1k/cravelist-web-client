@@ -1,2 +1,12 @@
 Id: {{model.id}} | Name: {{model.name}} | Location: {{model.location}}
+<div>
+    <div>
+        <label>Name</label>
+        {{input placeholder="What are you craving?" value=model.name}}
+    </div>
+    <div>
+        <label>Location</label>
+        {{input placeholder="Where did you wanna eat it?" value=model.location}}
+    </div>
+</div>
 {{#link-to "food.list"}}Back to list{{/link-to}}
