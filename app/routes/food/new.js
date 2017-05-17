@@ -6,13 +6,5 @@ export default Ember.Route.extend({
   },
   deactivate() {
     this.get('controller.model').rollbackAttributes();
-  },
-  actions: {
-    saveEntry() {
-      this.get('controller.model').save().then(function(value) {
-        Ember.Logger.log("SAVED", value);
-      });
-      this.transitionTo('food.list');
-    }
   }
 });

@@ -8,6 +8,10 @@ Id: {{model.id}} | Name: {{model.name}} | Location: {{model.location}}
         <label>Location</label>
         {{input placeholder="Where did you wanna eat it?" value=model.location}}
     </div>
+    <div>
+        <label>Eaten</label>
+        {{input type="checkbox" checked=model.eaten}}
+    </div>
 </div>
 {{#link-to "food.list"}}Back to list{{/link-to}}
-<button {{action "saveEntry"}}>Save "{{model.name}}"</button>
+<button {{action "saveEntry" model}}>Save "{{model.name}}"</button>

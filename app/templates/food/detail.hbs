@@ -1,2 +1,20 @@
-Id: {{model.id}} | Name: {{model.name}}
+Id: {{model.id}} | Name: {{model.name}} | Location: {{model.location}}
+<div>
+    <div>
+        <label>Name</label>
+        {{input placeholder="What are you craving?" value=model.name}}
+    </div>
+    <div>
+        <label>Location</label>
+        {{input placeholder="Where did you wanna eat it?" value=model.location}}
+    </div>
+    <div>
+        <label>Eaten</label>
+        {{input type="checkbox" checked=model.eaten}}
+    </div>
+</div>
 {{#link-to "food.list"}}Back to list{{/link-to}}
+{{#if model.hasDirtyAttributes}}
+    <p>Has Dirty Attrs</p>
+    <button {{action "saveEntry" model}}>Save "{{model.name}}"</button>
+{{/if}}
