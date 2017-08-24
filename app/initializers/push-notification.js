@@ -4,6 +4,7 @@ import fetch from "ember-network/fetch";
 const { Logger } = Ember;
 
 export function initialize() {
+  return;
   if ('serviceWorker' in navigator && 'PushManager' in window) {
     Logger.debug('Service Worker and Push is supported');
 
