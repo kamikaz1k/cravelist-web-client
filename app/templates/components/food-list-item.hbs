@@ -1,9 +1,11 @@
-<div style="border: 2px solid grey; padding: 15px; margin: 5px;">
-    {{#link-to "food.detail" entry.id}}
-        <p>{{entry.name}}</p>
-        <p>{{entry.location}}</p>
-        {{#if entry.eaten}}
-            <p>EATEN</p>
-        {{/if}}
-    {{/link-to}}
+<div class="card">
+    <!-- <div class="card-header">
+    </div> -->
+    <div class="card-body">
+      <h4 class="card-title">{{entry.name}}</h4>
+      <p class="card-text">{{entry.location}}</p>
+      {{#link-to "food.detail" entry.id class="btn btn-primary"}}Open{{/link-to}}
+    </div>
+  <!-- {{#link-to "food.detail" entry.id}}
+  {{/link-to}} -->
 </div>

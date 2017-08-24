@@ -1,17 +1,38 @@
-Id: {{model.id}} | Name: {{model.name}} | Location: {{model.location}}
-<div>
-    <div>
-        <label>Name</label>
-        {{input placeholder="What are you craving?" value=model.name}}
-    </div>
-    <div>
-        <label>Location</label>
-        {{input placeholder="Where did you wanna eat it?" value=model.location}}
-    </div>
-    <div>
-        <label>Eaten</label>
-        {{input type="checkbox" checked=model.eaten}}
-    </div>
-</div>
-{{#link-to "food.list"}}Back to list{{/link-to}}
-<button {{action "saveEntry" model}}>Save "{{model.name}}"</button>
+<form>
+  <div class="form-group">
+    <label for="foodName">Food Name</label>
+    {{input
+      class="form-control"
+      id="foodName"
+      placeholder="What are you craving?"
+      value=model.name
+      aria-describedby="foodName"
+      required=true
+    }}
+  </div>
+  <div class="form-group">
+    <label for="foodLocation">Location</label>
+    {{input
+      class="form-control"
+      id="foodLocation"
+      placeholder="Where did you wanna eat it?"
+      value=model.location
+      aria-describedby="foodName"
+      required=true
+    }}
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+        {{input
+          class="form-check-input"
+          type="checkbox"
+          checked=model.eaten
+        }}
+        Did you eat it already?
+    </label>
+  </div>
+  <div style="text-align: right">
+    {{#link-to "food.list" class="btn btn-clear"}}Back to list{{/link-to}}
+    <button class="btn btn-primary" {{action "saveEntry" model}}>Save "{{model.name}}"</button>
+  </div>
+</form>

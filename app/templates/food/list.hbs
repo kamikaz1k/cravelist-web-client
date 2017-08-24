@@ -1,10 +1,13 @@
+<div style="padding-top: 20px;"></div>
+{{#link-to "food.new"}}
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Add a new craving!</h4>
+      <p class="card-text">{{entry.location}}</p>
+    </div>
+  </div>
+{{/link-to}}
 
-<!-- <li> -->
-{{#link-to "food.new"}}Add New{{/link-to}}
-<!-- </li> -->
 {{#each model as |foodItem|}}
-<!-- <li> -->
-  <!-- {{#link-to "food.detail" foodItem.id}}{{foodItem.name}} | {{foodItem.location}}{{/link-to}} -->
   {{food-list-item entry=foodItem}}
-<!-- </li> -->
 {{/each}}
