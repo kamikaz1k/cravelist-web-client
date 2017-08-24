@@ -1,4 +1,5 @@
 import Ember from "ember";
+import fetch from "ember-network/fetch";
 
 const { Logger } = Ember;
 
@@ -37,6 +38,15 @@ function registerUser(swRegistration) {
   })
   .then(function(subscription) {
     Logger.debug('User IS subscribed.', subscription);
+    fetch("/push", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        registration: subscription.endpoint.split("/send/")[1]
+      })
+    });
   });
 
 }
