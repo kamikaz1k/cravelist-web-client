@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">CraveList</a>
   {{#if session.isAuthenticated}}
-    <button {{action 'logout'}} class="btn">Logout</button>
+    {{#link-to 'logout' class="btn"}}Logout{{/link-to}}
   {{else}}
     {{#link-to 'login' class="btn"}}Login{{/link-to}}
   {{/if}}
