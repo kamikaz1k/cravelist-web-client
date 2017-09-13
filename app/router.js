@@ -12,6 +12,7 @@ Router.map(function() {
     this.route('detail', { path: '/detail/:foodId' });
     this.route('new');
   });
+  this.route('login');
 });
 
 export default Router;

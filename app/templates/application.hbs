@@ -1,4 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">CraveList</a>
+  {{#if session.isAuthenticated}}
+    <button {{action 'logout'}} class="btn">Logout</button>
+  {{else}}
+    {{#link-to 'login' class="btn"}}Login{{/link-to}}
+  {{/if}}
 </nav>
 {{outlet}}

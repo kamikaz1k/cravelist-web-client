@@ -1,0 +1,28 @@
+<div class="container">
+	<form {{action 'login' on='submit'}}>
+		<div class="form-group">
+	    <label for="email">Email address</label>
+	    {{input
+	      class="form-control"
+	      id="email"
+	      placeholder="you@self.com"
+	      value=model.username
+	      aria-describedby="email"
+	      required=true
+	    }}
+	  </div>
+	  <div class="form-group">
+	    <label for="password">Password</label>
+	    {{input
+	      type="password"
+				class="form-control"
+				id="password"
+				placeholder="you@self.com"
+				value=model.password
+				aria-describedby="password"
+				required=true
+	    }}
+	  </div>
+	  <button {{action 'login'}} class="btn btn-default">Submit</button>
+	</form>
+</div>
