@@ -7,7 +7,7 @@ export default Ember.Route.extend(
   actions: {
     saveEntry(model) {
       model.save().then(function(value) {
-        Ember.Logger.log("SAVED", value);
+        Ember.Logger.debug("SAVED", value);
       });
       this.transitionTo('food.list');
     }

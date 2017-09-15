@@ -3,7 +3,7 @@
     </div> -->
     <div class="card-body">
       <h4 class="card-title">{{entry.name}}</h4>
-      <p class="card-text">{{entry.location}}</p>
+      <p class="card-text">{{entry.location.name}}</p>
       {{#link-to "food.detail" entry.id class="btn btn-primary"}}Open{{/link-to}}
     </div>
   <!-- {{#link-to "food.detail" entry.id}}

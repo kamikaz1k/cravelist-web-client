@@ -23,6 +23,15 @@ module.exports = function(environment) {
     }
   };
 
+  ENV['place-autocomplete'] = {
+    exclude: false,
+    key: 'AIzaSyD05GnOcmjj-hiR9556l0jlGc7lE7JsTt4',
+    // client: 'cravelist-js',
+    // version: 3.27, // Optional - if client is set version must be above 3.24
+    // language: 'en', // Optional - be default will be based on your browser language
+    // region: 'GB' // Optional
+  };
+
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
     // ENV.APP.LOG_ACTIVE_GENERATION = true;
