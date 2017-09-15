@@ -12,21 +12,26 @@
   </div>
   <div class="form-group">
     <label for="foodLocation">Location</label>
-    {{place-autocomplete-field
-      value= model.restaurantName
+    {{#place-autocomplete-field
       disabled=false
       handlerController=this
-      inputClass='form-control place-autocomplete--input'
       focusOutCallback='done'
       placeChangedCallback='selectLocation'
       withGeoLocate=true
-      types='establishment'
-      setValueWithProperty='formatted_address'
-    }}
+      types='establishment'}}
+      {{input
+        id="foodLocation"
+        class="form-control"
+        placeholder="Where did you wanna eat it?"
+        value=model.restaurantName
+        aria-describedby="foodName"
+        required=true
+        focus-out='done'}}
+    {{/place-autocomplete-field}}
   </div>
   {{#if model.location}}
     <div>
-      <p>Restaurant Information:</p>
+      <p>Restaurant Information: ({{model.restaurantName}})</p>
       <p>{{model.location.name}}</p>
       <p>{{model.location.address}}</p>
       <p>{{model.location.coordinates}}</p>
