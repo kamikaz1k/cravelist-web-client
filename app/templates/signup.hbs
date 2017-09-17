@@ -1,0 +1,29 @@
+<div class="container">
+  <form {{action 'signup' on='submit'}}>
+    <div class="form-group">
+      <label for="email">Email address</label>
+      {{input
+        class="form-control"
+        id="email"
+        placeholder="you@self.com"
+        value=model.username
+        aria-describedby="email"
+        required=true
+      }}
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      {{input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="you@self.com"
+        value=model.password
+        aria-describedby="password"
+        required=true
+      }}
+    </div>
+    <pre>{{model.errorMessage}}</pre>
+    <button {{action 'signup'}} class="btn btn-default">Submit</button>
+  </form>
+</div>
