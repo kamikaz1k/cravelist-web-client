@@ -10,7 +10,9 @@ export default Ember.Controller.extend({
         'authenticator:oauth2',
         this.get("model.username"),
         this.get("model.password")
-      ).catch(e => this.set('errorMessage', e));
+      ).catch(e => {
+        this.set('model.errorMessage', e.error || e)
+      });
     }
 	}
 });
