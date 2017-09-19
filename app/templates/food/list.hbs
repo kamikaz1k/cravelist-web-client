@@ -1,4 +1,10 @@
 <div style="padding-top: 20px;"></div>
+<div class="card">
+  {{input
+    value=model.search
+    placeholder='Search'
+  }}
+</div>
 {{#link-to "food.new"}}
   <div class="card">
     <div class="card-body">
@@ -8,6 +14,6 @@
   </div>
 {{/link-to}}
 
-{{#each model as |foodItem|}}
+{{#each foodList as |foodItem|}}
   {{food-list-item entry=foodItem}}
 {{/each}}
