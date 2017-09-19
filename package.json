@@ -9,7 +9,7 @@
   },
   "scripts": {
     "build": "ember build",
-    "start": "ember server",
+    "start": "ember s --proxy https://cravelist-web-server.herokuapp.com/",
     "test": "ember test"
   },
   "repository": "",
