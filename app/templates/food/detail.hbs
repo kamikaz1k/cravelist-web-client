@@ -1,4 +1,3 @@
-Id: {{model.id}} | Name: {{model.name}} | Location: {{model.location}}
 <form>
   <div class="form-group">
     <label for="foodName">Food Name</label>
@@ -13,14 +12,21 @@ Id: {{model.id}} | Name: {{model.name}} | Location: {{model.location}}
   </div>
   <div class="form-group">
     <label for="foodLocation">Location</label>
-    {{input
-      class="form-control"
-      id="foodLocation"
-      placeholder="Where did you wanna eat it?"
-      value=model.location
-      aria-describedby="foodName"
-      required=true
-    }}
+    {{#place-autocomplete-field
+      disabled=false
+      handlerController=this
+      placeChangedCallback='selectLocation'
+      withGeoLocate=true
+      types='establishment'}}
+      {{input
+        id="foodLocation"
+        class="form-control"
+        placeholder="Where did you wanna eat it?"
+        value=model.restaurantName
+        aria-describedby="foodName"
+        required=true
+        focus-out='done'}}
+    {{/place-autocomplete-field}}
   </div>
   <div class="form-check">
     <label class="form-check-label">
